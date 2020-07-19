@@ -1,0 +1,9 @@
+.myClass {
+  width: 100px;
+  height: 100px;
+  background: #00fb00;
+}
+
+.myBorder {
+  border: 2px solid #fa0000;
+}

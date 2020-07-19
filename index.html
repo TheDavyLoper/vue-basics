@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Vue.js Basics</title>
+  
+  <!-- Vue.js -->
+  <script src="js/vue.min.js"></script>
+</head>
+<body>
+  
+  <div class="container" id="root">
+    
+    <h1>Vue Basics Tutorial</h1>
+    
+    <!-- v-show -->
+    <h3 v-show="hideMe">{{ sayHi() }}</h3>
+    
+    <!-- v-html -->
+    <div v-html="learn"></div>
+    
+    <!-- data binding -->
+    <img v-bind:src="img.src" v-bind:alt="img.alt" v-bind:href="img.href" width="100px" height="100px">
+    <br /><br />
+    
+    <!-- two way data binding -->
+    <input type="text" v-model="input">
+    <p>{{input}}</p>
+    
+    <!-- handling events -->
+    <div>
+      <button class="btn btn-danger" v-on:click="sayHello">Greet</button>
+    </div> <br />
+    
+    <input v-model="input" v-on:keyup.13="showKey"> <br /><br />
+    
+    <!-- computed properties -->
+    <button class="btn btn-outline-primary" v-on:click="a++">a++</button>
+    <button class="ml-3 btn btn-outline-primary" v-on:click="a--">a - -</button>
+    <span class="pl-5">{{ compA }}</span>
+    <!--<span class="pl-5">{{ compA }}</span>-->
+    
+    <!-- class binding -->
+    <div class="mt-5" v-bind:class="{myClass: active, myBorder: border}"></div>
+    
+    <!-- inline style binding -->
+    <div class="mt-5" v-bind:style="{backgroundColor: color, width: myValue, height: myValue}"></div> <br />
+    
+    <!-- v-if conditionals -->
+    <h3 v-if="false">Value is true</h3>
+    <h3 v-else>Value is false</h3>
+    <h3 v-if="value == 1">1</h3>
+    <h3 v-else-if="value == 2">2</h3>
+    <h3 v-else-if="value == 3">3</h3>
+    <h3 v-else>No value to display</h3> <br />
+    
+    <!-- v-for loops -->
+    <div>
+      <ul>
+        <li v-for="(item, index) in person">{{index + 1}}: {{item}}</li>
+      </ul>
+    </div>
+    
+    <!-- checkbox -->
+    <div>
+      <input type="checkbox" v-model="check" />
+      {{check}}
+    </div>
+    
+    <!-- radio buttons -->
+    <div>
+      <input type="radio" value="male" v-model="gender"/>
+      <input class="ml-3" type="radio" value="female" v-model="gender" />
+      <strong class="ml-3">{{gender}}</strong>
+    </div>
+    
+    <!-- select element -->
+    <div class="mb-5">
+      <select v-model="selection">
+        <option>male</option>
+        <option>female</option>
+        <option>genderless</option>
+      </select>
+      <span class="pl-4">You selected {{selection}}</span>
+    </div>
+    
+</div>
+
+  <!--javascript source files-->
+  
+  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+  
+  <script src="js/popper.js" crossorigin="anonymous"></script>
+  
+  <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+  
+  <script src="app.js"></script>
+</body>
+</html>
